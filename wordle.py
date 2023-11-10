@@ -44,13 +44,15 @@ class GameLogic:
     def check_current_guess_is_valid(self):
         # return True if current guess is valid else return False
         # current guess is valid if it is a valid word and it is 5 letter word
-        return True
+        return self.current_guess.isalpha() and len(self.current_guess) == 5 and self.current_guess.lower() in words.WORDS
+        # return True
 
     # current_guess is list of List where the first letter denotes the user entered letter
     # and second letter denotes weather that letter is present in solution word or not.
     # and the third letter denotes weather the letter is present in the solution word in the correct position or not.
     def check_the_current_guess(self):
         current_guess_string = ''
+        return self.current_guess.lower() == self.solution_word
         # write code here to test current guess
         # if current guess is correct return True else return False
         pass
